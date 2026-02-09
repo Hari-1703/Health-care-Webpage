@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Healthcare Support App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Healthcare Support & Volunteer Help</h1>
+
+  <form name="healthcare-form" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="healthcare-form" />
+
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="tel" name="phone" placeholder="Phone Number" />
+
+    <select name="role">
+      <option value="Patient">Patient</option>
+      <option value="Volunteer">Volunteer</option>
+    </select>
+
+    <textarea name="message" placeholder="Describe your issue or interest"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="chatbot">
+    <h2>AI FAQ Assistant (Concept)</h2>
+    <input id="userInput" placeholder="Ask a question..." />
+    <button onclick="chat()">Ask</button>
+    <p id="botReply"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
