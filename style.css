@@ -1,26 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fa;
-  padding: 40px;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #f4f8fb, #e9f1f8);
+  color: #1f2933;
 }
 
-form, .chatbot {
-  background: white;
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 900px;
+  margin: -40px auto 60px;
   padding: 20px;
-  max-width: 400px;
-  margin-bottom: 30px;
-  border-radius: 8px;
 }
 
-input, select, textarea, button {
+.card {
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+input, select, textarea {
   width: 100%;
-  margin: 8px 0;
-  padding: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 90px;
 }
 
 button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
   background: #0077cc;
   color: white;
+  font-size: 16px;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+
+.note {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+.ai-reply {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f1f5f9;
+  border-radius: 8px;
+  min-height: 40px;
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
