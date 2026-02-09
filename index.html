@@ -2,34 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Healthcare Support App</title>
+  <title>Healthcare Support Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Healthcare Support & Volunteer Help</h1>
 
-  <form name="healthcare-form" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="healthcare-form" />
+  <header class="hero">
+    <h1>Healthcare Support Platform</h1>
+    <p>Connecting patients and volunteers with care-driven NGOs</p>
+  </header>
 
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input type="tel" name="phone" placeholder="Phone Number" />
+  <main class="container">
 
-    <select name="role">
-      <option value="Patient">Patient</option>
-      <option value="Volunteer">Volunteer</option>
-    </select>
+    <section class="card fade-in">
+      <h2>Request Support / Volunteer</h2>
 
-    <textarea name="message" placeholder="Describe your issue or interest"></textarea>
-    <button type="submit">Submit</button>
-  </form>
+      <form name="healthcare-form" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="healthcare-form" />
 
-  <div class="chatbot">
-    <h2>AI FAQ Assistant (Concept)</h2>
-    <input id="userInput" placeholder="Ask a question..." />
-    <button onclick="chat()">Ask</button>
-    <p id="botReply"></p>
-  </div>
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+
+        <select name="role">
+          <option value="Patient">Patient</option>
+          <option value="Volunteer">Volunteer</option>
+        </select>
+
+        <textarea name="message" placeholder="Describe your issue or interest"></textarea>
+
+        <button type="submit">Submit Request</button>
+      </form>
+
+      <p class="note">
+        Your information is securely collected to assist healthcare NGOs.
+      </p>
+    </section>
+
+    <section class="card fade-in delay">
+      <h2>AI Healthcare Assistant</h2>
+      <p class="subtitle">Ask questions about services, admissions, or volunteering</p>
+
+      <input id="userInput" placeholder="Ask a healthcare-related question..." />
+      <button onclick="chat()">Ask AI</button>
+
+      <div id="botReply" class="ai-reply"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Healthcare NGO Support • Concept Prototype</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
