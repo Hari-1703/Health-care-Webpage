@@ -5,7 +5,7 @@ export async function handler(event) {
 
   try {
     const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyCn4u411GZNbP77qxOaewUpBxuQdxAs2Oc}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
