@@ -1,12 +1,25 @@
-function chat() {
-  const input = document.getElementById("userInput").value.toLowerCase();
-  let reply = "Thank you. Our team will contact you soon.";
+async function chat() {
+  const input = document.getElementById("userInput").value;
+  const replyBox = document.getElementById("botReply");
 
-  if (input.includes("volunteer")) {
-    reply = "You can volunteer by filling the form above.";
-  } else if (input.includes("help") || input.includes("patient")) {
-    reply = "Medical assistance requests are reviewed within 24 hours.";
+  if (!input.trim()) {
+    replyBox.innerText = "Please enter a question.";
+    return;
   }
 
-  document.getElementById("botReply").innerText = reply;
+  replyBox.innerText = "Thinking… 🤖";
+
+  try {
+    const res = await fetch("/.netlify/functions/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: input })
+    });
+
+    const data = await res.json();
+    replyBox.innerText = data.reply || "No response from AI.";
+  } catch (err) {
+    replyBox.innerText = "AI service error.";
+    console.error(err);
+  }
 }
