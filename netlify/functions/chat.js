@@ -1,7 +1,7 @@
 export async function handler(event) {
   const { question } = JSON.parse(event.body);
 
-  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+  const GEMINI_API_KEY = process.env.AIzaSyCn4u411GZNbP77qxOaewUpBxuQdxAs2Oc;
 
   try {
     const res = await fetch(
